@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod_.c                                      :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msamoile <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/09 15:29:14 by msamoile          #+#    #+#             */
-/*   Updated: 2021/02/09 16:20:08 by msamoile         ###   ########.fr       */
+/*   Created: 2021/02/14 08:30:09 by msamoile          #+#    #+#             */
+/*   Updated: 2021/02/14 09:35:15 by msamoile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-void	ft_div_mod(int a, int b, int *div, int *mod)
+void	ft_rev_int_tab(int *tab, int size)
 {
+	int i;
+	int n;
+	int swap;
 
-	*div = a / b;
-	*mod = a % b;
-}
-
-int main()
-{
-	int a;
-	int b;
-	int div;
-	int mod;
-		
-	a = 32;
-	b = 10;
-	ft_div_mod(a, b, &div, &mod);
-	printf("division = %d modulo =  %d", div, mod);
-	return (0);
+	i = 0;
+	n = size - 1;
+	while (i < (size / 2))
+	{
+		swap = tab[i];
+		tab[i] = tab[n];
+		tab[n] = swap;
+		i++;
+		n--;
+	}
 }
